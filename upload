@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -rf /tmp/arduino-upload
+
+arduino-cli compile --output-dir=build --build-path=/tmp/arduino-upload -b arduino:samd:nano_33_iot .
+
+arduinoOTA -address "$1" -port 65280 -username arduino -password "password" -sketch "/tmp/arduino-upload/clock2-rewrite.ino.bin" -upload /sketch -b
+
+rm -rf /tmp/arduino-upload

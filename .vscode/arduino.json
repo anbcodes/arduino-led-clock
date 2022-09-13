@@ -1,0 +1,5 @@
+{
+    "port": "/dev/ttyACM1",
+    "board": "arduino:samd:nano_33_iot",
+    "sketch": "clock2.ino"
+}
